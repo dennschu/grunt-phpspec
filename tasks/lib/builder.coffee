@@ -27,7 +27,7 @@ exports.init = (grunt) ->
     'phpspec run'
 
   #
-  # Returns the prefix to the cucumber command
+  # Returns the prefix to the phpspec command
   #
   #
   prefix = ->
@@ -35,7 +35,15 @@ exports.init = (grunt) ->
     ''
 
   #
-  # Returns the directory that cucmber features will be run from
+  # Returns optional phpspec command arguments which are prefixed with ' '
+  #
+  #
+  command_arguments = ->
+    return ' ' + config.command_arguments unless config.command_arguments == undefined
+    ''
+
+  #
+  # Returns the directory that phpspec features will be run from
   #
   # @return string
   #
@@ -52,6 +60,6 @@ exports.init = (grunt) ->
     directory = path.normalize features
     config    = options defaults
 
-    return prefix() + command() + ' ' + directory
+    return prefix() + command() + ' ' + directory + command_arguments()
 
   return exports

@@ -36,7 +36,8 @@ phpspec: {
         specs: 'specs/'
     },
     options: {
-        prefix: 'bin/'
+        prefix: 'bin/',
+        command_arguments: '--format=dot --ansi -vvv'
     }
 }
 ```
