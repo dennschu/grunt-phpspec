@@ -14,7 +14,8 @@ module.exports = (grunt) ->
       test:
         specs: 'spec/'
       options:
-        prefix: 'bin/'
+        prefix: 'bin/',
+        command_arguments: '--format=dot --ansi -vvv'
 
   grunt.loadTasks 'tasks'
 
